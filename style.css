@@ -49,13 +49,43 @@ p {
 
 .information {
     margin-top: 20px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .join-container {
     display: flex;
     justify-content: center; 
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+#bulletlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 230px;
+    margin: 0 auto;
+}
+
+.bulletlist-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bulletlist-item img {
+    margin-right: 10px;
+    height: 30px;
+    width: auto;
+}
+
+.text{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
 
 #JoinButton {
@@ -86,8 +116,8 @@ p {
 
 
 @media screen and (max-width: 600px) {
-    .information {
-        font-size: 15px;
+    .information, .text {
+        font-size: 13px;
     }
 
     footer{
@@ -96,10 +126,22 @@ p {
     }
 
     #JoinButton {
-        padding: 25px;
+        padding: 15px;
     }
 
     .join-container {
-        margin-top: 30px;
+        margin-top: 5px;
+    }
+
+    .bulletlist-item img {
+        height: 20px;
+    }
+
+    .bulletlist-item {
+        margin-bottom: 1px;
+    }
+
+    .join-container a{
+        font-size: 14px;
     }
 }
