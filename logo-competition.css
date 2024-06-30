@@ -1,0 +1,30 @@
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.time-section {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  font-size: 30px;
+  font-family: "Playwrite MX", cursive;
+}
+
+.item {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .time-section {
+    font-size: 25px;
+    padding: 5px;
+  }
+
+  .time {
+    margin: 30px;
+    flex-direction: column;
+  }
+}
