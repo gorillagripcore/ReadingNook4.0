@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Calendar Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .event {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .event h3 {
+            margin: 0 0 10px 0;
+        }
+        .event p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upcoming Events</h1>
+    <div id="events"></div>
+
+    <script>
+        const apiKey = 'AIzaSyB1kmqWpYOxBpPqTZjsNGEJNF-tSfksNb0';
+        const calendarId = '976f0493b621b2cdc4e5db1be371fb467ea6d6286b5a9dcafefbd9a9172cf009@group.calendar.google.com';
+        const maxResults = 10;
+
+        function fetchEvents() {
+        const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&maxResults=${maxResults}&orderBy=startTime&singleEvents=true`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const events = data.items;
+            const eventsContainer = document.getElementById('events');
+
+            events.forEach(event => {
+                const eventElement = document.createElement('div');
+                eventElement.classList.add('event');
+
+                const eventTitle = document.createElement('h3');
+                eventTitle.textContent = event.summary;
+                eventElement.appendChild(eventTitle);
+
+                const eventDate = document.createElement('p');
+                eventDate.textContent = `Date: ${new Date(event.start.dateTime || event.start.date).toLocaleDateString()}`;
+                eventElement.appendChild(eventDate);
+
+                const eventLocation = document.createElement('p');
+                eventLocation.textContent = `Location: ${event.location || 'Not specified'}`;
+                eventElement.appendChild(eventLocation);
+
+                const eventDescription = document.createElement('p');
+                eventDescription.textContent = event.description || '';
+                eventElement.appendChild(eventDescription);
+
+                eventsContainer.appendChild(eventElement);
+            });
+        })
+        .catch(error => console.error('Error fetching events:', error));
+}
+
+document.addEventListener('DOMContentLoaded', fetchEvents);
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+.content {
+  max-width: 80%;
+  margin: 20px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Playwrite MX", cursive;
+}
+
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.event {
+  border: 3px solid #b3bccf;
+  border-radius: 5px;
+  padding: 10px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.event h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.event p {
+  margin: 10px 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .event {
+    width: 100%;
+  }
+
+  .event p {
+    font-size: 15px;
+    line-height: 1.2;
+  }
+}
