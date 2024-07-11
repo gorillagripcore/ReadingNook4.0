@@ -9,31 +9,30 @@ function fetchEvents() {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const events = data.items;
-      const eventsContainer = document.getElementById("events");
+      const currentTime = new Date();
 
-      events.forEach((event) => {
+      const filteredEvents = data.items.filter((event) => {
+        const eventEnd = new Date(event.end.dateTime || event.end.date);
+        return eventEnd > currentTime;
+      });
+
+      const eventsContainer = document.getElementById("events");
+      eventsContainer.innerHTML = "";
+
+      filteredEvents.forEach((event) => {
         const eventElement = document.createElement("div");
         eventElement.classList.add("event");
 
         const eventTitle = document.createElement("h3");
         eventTitle.textContent = event.summary;
 
-        const starImage = document.createElement("img");
-        starImage.src = "img/star_div.png";
-        starImage.alt = "Star Image";
-        starImage.classList.add("star-image");
-
-        eventElement.appendChild(eventTitle);
-        eventElement.appendChild(starImage);
-
+        const eventDateTime = document.createElement("p");
         const startDate = new Date(event.start.dateTime || event.start.date);
         const endDate = new Date(event.end.dateTime || event.end.date);
 
         const dateOptions = { weekday: "long", day: "numeric", month: "long" };
         const timeOptions = { hour: "2-digit", minute: "2-digit" };
 
-        const eventDateTime = document.createElement("p");
         if (
           startDate.toDateString() === endDate.toDateString() ||
           !event.start.dateTime
@@ -43,17 +42,27 @@ function fetchEvents() {
             dateOptions
           )} at ${startDate.toLocaleTimeString("en-GB", timeOptions)}`;
         } else {
+          eventDateTime.innerHTML = `<strong>Start:</strong> ${startDate.toLocaleDateString(
+            "en-GB",
+            dateOptions
+          )} ${startDate.toLocaleTimeString("en-GB", timeOptions)}<br>
+            <strong>End:</strong> ${endDate.toLocaleDateString(
+              "en-GB",
+              dateOptions
+            )} ${endDate.toLocaleTimeString("en-GB", timeOptions)}`;
         }
-        eventElement.appendChild(eventDateTime);
 
         const eventLocation = document.createElement("p");
         eventLocation.innerHTML = `<strong>Location:</strong> ${
           event.location || "TBA"
         }`;
-        eventElement.appendChild(eventLocation);
 
         const eventDescription = document.createElement("p");
         eventDescription.textContent = event.description || "";
+
+        eventElement.appendChild(eventTitle);
+        eventElement.appendChild(eventDateTime);
+        eventElement.appendChild(eventLocation);
         eventElement.appendChild(eventDescription);
 
         eventsContainer.appendChild(eventElement);
