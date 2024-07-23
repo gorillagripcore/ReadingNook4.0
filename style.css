@@ -62,6 +62,16 @@ p {
     margin-top: 30px;
 }
 
+.book {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+.book img {
+    width: 128px;
+    height: 193px;
+}
+
 #bulletlist {
     display: flex;
     flex-direction: column;
