@@ -1,147 +1,168 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    font-size: 20px;
-    flex-direction: column;
-    overflow-x: hidden; 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  overflow-x: hidden;
 }
+
 embed {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-img{
-    width: 100%
+img {
+  width: 100%;
 }
 
-a{
+a {
   font-family: "Playwrite MX", cursive;
   font-optical-sizing: auto;
 }
 
 .content {
-    flex: 1;
+  flex: 1;
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+}
+
+i {
+  color: #000000;
+}
+
+header a {
+  color: #000000;
+  text-decoration: none;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+header a:hover {
+  color: #384456;
 }
 
 footer {
-    background-color: #b3bccf;
-    text-align: center;
-    padding: 10px;
+  background-color: #a4b0c8;
+  text-align: center;
+  padding: 10px;
 }
-
-i{color: #ffffff;}
 
 footer a {
-    color: #ffffff; 
-    text-decoration: none; 
-    margin-right: 20px;
-    margin-left: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+  margin-left: 5px;
 }
 
-footer a:hover{
-    color: #e7e8e9;
+footer a:hover {
+  color: #e7e8e9;
 }
 
 p {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .information {
-    margin-top: 20px;
-    font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .join-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
 #bulletlist {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 230px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 230px;
+  margin: 0 auto;
 }
 
 .bulletlist-item {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-bottom: 5px;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .bulletlist-item img {
-    margin-right: 10px;
-    height: 30px;
-    width: auto;
+  margin-right: 10px;
+  height: 30px;
+  width: auto;
 }
 
-.text{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #JoinButton {
-    background-color: #b3bccf;
-    padding: 40px;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 20px;
-    font-size: 35px;
-    z-index: 1; 
+  background-color: #a4b0c8;
+  padding: 40px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 35px;
+  z-index: 1;
 }
 
 #confettiCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 0;
-    height: 100%;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 600px) {
-    .information, .text {
-        font-size: 15px;
-    }
+  .information,
+  .text {
+    font-size: 15px;
+  }
 
-    footer{
-        display: flex;
-        flex-direction: column;
-    }
+  header {
+    display: flex;
+    flex-direction: column;
+  }
 
-    #JoinButton {
-        padding: 15px;
-    }
+  #JoinButton {
+    padding: 15px;
+  }
 
-    .join-container {
-        margin-top: 30px;
-    }
+  .join-container {
+    margin-top: 30px;
+  }
 
-    .bulletlist-item img {
-        height: 20px;
-    }
+  .bulletlist-item img {
+    height: 20px;
+  }
 
-    .bulletlist-item {
-        margin-bottom: 1px;
-    }
+  .bulletlist-item {
+    margin-bottom: 1px;
+  }
 
-    #bulletlist {
-        margin-top: 30px;
-    }
+  #bulletlist {
+    margin-top: 30px;
+  }
 
-    .join-container a{
-        font-size: 14px;
-    }
+  .join-container a {
+    font-size: 14px;
+  }
 }
