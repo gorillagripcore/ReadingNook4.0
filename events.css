@@ -17,9 +17,10 @@ h1 {
 }
 
 .event {
-  border: 3px solid #b3bccf;
-  border-radius: 5px;
-  padding: 10px;
+  background-color: #fcfcf7;
+  border: 1px solid #7c7c7c;
+  border-radius: 30px;
+  padding: 15px;
   width: 400px;
   display: flex;
   flex-direction: column;
