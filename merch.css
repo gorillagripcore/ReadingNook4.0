@@ -1,0 +1,70 @@
+.flex-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.image-box {
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.image-container img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s;
+}
+
+.image-container .hover-image {
+  opacity: 0;
+}
+
+.image-container:hover .default-image {
+  opacity: 0;
+}
+
+.image-container:hover .hover-image {
+  opacity: 1;
+}
+
+.image-text {
+  font-size: 16px;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .image-container {
+    width: 250px;
+    height: 250px;
+  }
+}
