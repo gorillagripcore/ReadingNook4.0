@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function loadCalendarEvents() {
   const calendarId =
     "4a4669f05d9d2911663b8c048d0088f9b1600f67c7f612d144bca15fa133b046@group.calendar.google.com";
-  const apiKey = "AIzaSyB5au86SXvivbUSQIeHuTxN0VkHcYlCPE0";
+  const apiKey = "Api Key"; //Ask alex ;))
 
   fetch(
     `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}`
